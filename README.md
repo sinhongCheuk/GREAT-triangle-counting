@@ -1,7 +1,7 @@
 # GREAT: Generalized Reservoir Sampling based Triangle Counting Estimation over Streaming Graphs
 
 ## Introduction
-Source codes of the paper: "GREAT: Generalized Reservoir Sampling based Triangle Counting Estimation over Streaming Graphs."
+Source codes of the paper : "GREAT: Generalized Reservoir Sampling based Triangle Counting Estimation over Streaming Graphs".
 
 ## Requirement
 - fastutil-7.2.0.jar
