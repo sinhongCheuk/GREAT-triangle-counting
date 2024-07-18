@@ -173,7 +173,7 @@ public class Estimator {
                     }
                     survive_rate_cache[(int)cur_round + 1][(int)cur_round] = 1;
                     
-                    p = p * (1 - alpha);    // update sampling probability
+                    // p = p * (1 - alpha);      // another sampling probablity
                     
                     
                     System.out.println();
@@ -194,7 +194,7 @@ public class Estimator {
                     cur_round++;
                     interval = 0;
                     discoverd_triangles_per_round = 0;
-                    alpha = 0.1;
+                    alpha = init_alpha;
 
                     this.N = (int) (k * alpha);
 
@@ -209,7 +209,7 @@ public class Estimator {
                     }
                     survive_rate_cache[(int)cur_round + 1][(int)cur_round] = 1;
                     
-                    p = p * (1 - alpha);   // update sampling probability
+                    // p = p * (1 - alpha);      // another sampling probablity
                     System.out.println();
                 }
 
@@ -257,7 +257,8 @@ public class Estimator {
 
             // if there are still have some slots for coming edges, keep sampling
             if (empty_slot > 0) {
-
+      
+                p = k / t;
                 double randomValue = random.nextDouble();
                 if (randomValue < p) {
                     // sample the coming edge
@@ -459,7 +460,7 @@ public class Estimator {
      * output local triangle estimation to file
      */ 
     public void output() throws IOException {
-        String fileName = "/data1/local-GREAT+1.txt";        // local triangle estimation file path
+        String fileName = "/data1/local-GREAT+2.txt";        // local triangle estimation file path
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
         for (int i = 0; i <= maxID; i++) {
@@ -476,7 +477,7 @@ public class Estimator {
      * caculate local triangle estimation error
      */ 
     public double computeLAPE() {
-        String algorithmOutputFile = "/data1/local-GREAT+1.txt";      // local triangle estimation file path
+        String algorithmOutputFile = "/data1/local-GREAT+2.txt";      // local triangle estimation file path
         String groundTruthFile = "/data1/groundTruthFile.txt";     // local triangle groundtruth file path
   
         double averageLAPE = 0;
