@@ -63,7 +63,7 @@ public class Main {
                 System.out.println("Number of edges processed: " + lineNum +", estimated number of global triangles: " + String.format("%4f", estimator.getGlobalTriangle()));
             }
         }
-        System.out.println("GREAT+2 terminated ...");
+        System.out.println("GREAT+ terminated ...");
         System.out.println("Estimated number of global triangles: " + String.format("%4f", estimator.getGlobalTriangle()));
 
         br.close();

@@ -460,7 +460,7 @@ public class Estimator {
      * output local triangle estimation to file
      */ 
     public void output() throws IOException {
-        String fileName = "/data1/local-GREAT+2.txt";        // local triangle estimation file path
+        String fileName = "/data1/local-GREAT+.txt";        // local triangle estimation file path
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
         for (int i = 0; i <= maxID; i++) {
@@ -477,7 +477,7 @@ public class Estimator {
      * caculate local triangle estimation error
      */ 
     public double computeLAPE() {
-        String algorithmOutputFile = "/data1/local-GREAT+2.txt";      // local triangle estimation file path
+        String algorithmOutputFile = "/data1/local-GREAT+.txt";      // local triangle estimation file path
         String groundTruthFile = "/data1/groundTruthFile.txt";     // local triangle groundtruth file path
   
         double averageLAPE = 0;
