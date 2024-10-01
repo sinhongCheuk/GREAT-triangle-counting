@@ -461,6 +461,7 @@ public class Estimator {
      */ 
     public void output() throws IOException {
         String fileName = "/data1/local-GREAT+.txt";        // local triangle estimation file path
+        int v_count = 0;                                    // vertices of discovered triangles
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
         for (int i = 0; i <= maxID; i++) {
@@ -468,9 +469,14 @@ public class Estimator {
                 System.out.println("writing node: " + i);
             }
             double count = nodeToCount.getOrDefault(i, 0.0);
+            if (count > 0) {
+                v_count++;
+            }
             writer.write(i + "\t" + count + "\n");
         }
-        writer.close(); 
+        
+        System.out.println("vertices of discovered triangles:" + v_count);
+        writer.close();
     }
 
     /**
